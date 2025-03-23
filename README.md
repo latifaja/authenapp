@@ -1,59 +1,82 @@
-# Authenapp
+# Authentication App with Angular and JSON Server
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+## Overview
+This project is a simple authentication system built using Angular for the frontend and JSON Server to simulate a backend API. It includes user authentication features such as:
+- Signup (Registration)
+- Login
+- Logout
+- Access control for protected pages
 
-## Development server
+## Features
+- User registration with JSON Server as a mock database
+- Authentication using local storage
+- Redirecting unauthorized users to the login page
+- A basic home page after successful authentication
+- Logout functionality
 
-To start a local development server, run:
+## Screenshots
 
-```bash
-ng serve
-```
+### 1. Signup Page  
+![Signup Page](screenshots/register.png)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 2. Login Page  
+![Login Page](screenshots/log in.png)
 
-## Code scaffolding
+### 3. Protected Home Page  
+![Home Page](screenshots/dashboard.png)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 4. Uplad file page 
+![Logout](screenshots/upload.png)
 
-```bash
-ng generate component component-name
-```
+## Technologies Used
+- **Frontend:** Angular
+- **Backend (Mock API):** JSON Server
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Installation
 
-```bash
-ng generate --help
-```
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [Angular CLI](https://angular.io/cli)
 
-## Building
+### Setup
+1. Clone this repository:
+   ```sh
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
-To build the project run:
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-```bash
-ng build
-```
+3. Start JSON Server:
+   ```sh
+   json-server --watch db.json --port 3000
+   ```
+   This will start a mock API on `http://localhost:3000`.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4. Start the Angular application:
+   ```sh
+   ng serve
+   ```
+   The app will be available at `http://localhost:4200/`.
 
-## Running unit tests
+## Usage
+1. **Signup:** Create a new user account.
+2. **Login:** Authenticate using the registered credentials.
+3. **Protected Pages:** Users must log in to access protected routes.
+4. **Logout:** End the session and restrict access to protected pages.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
+## API Endpoints (JSON Server)
+- **GET /users** - Retrieve users
+- **POST /users** - Register a new user
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+## License
+This project is open-source and free to use.
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
