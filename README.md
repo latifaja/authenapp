@@ -20,7 +20,7 @@ This project is a simple authentication system built using Angular for the front
 ![Signup Page](screenshots/register.png)
 
 ### 2. Login Page  
-![Login Page](screenshots/log in.png)
+![Login Page](screenshots/login.png)
 
 ### 3. Protected Home Page  
 ![Home Page](screenshots/dashboard.png)
