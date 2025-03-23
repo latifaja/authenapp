@@ -1,0 +1,39 @@
+
+.bg-custom-blue {
+    background-color: #0670db; 
+  }
+  
+ 
+  .nav-link {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .nav-link:hover {
+    background-color: #004080; 
+  }
+  
+  .active {
+    background-color: #0059b3 !important; 
+    color: white !important;
+  }
+ 
+  .btn-danger {
+    background-color: #6f94f9;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #6f8cdc;
+  }
+ 
+  .col-md-10 {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+
+  .rounded-circle {
+    border: 2px solid #fff; 
+  }

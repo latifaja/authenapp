@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Upload your files</h5>
+    
+    <input type="file" class="form-control" id="fileInput" (change)="onFileChange($event)" style="display: none;" />
+      <label class="input-group-text" for="fileInput">Choose file</label>
+      <input type="text" class="form-control" readonly [value]="fileName || 'No file chosen'" />
+    
+    
+  </div>
+</div>

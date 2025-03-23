@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center">
+              <img src="logo/ensetlogo.png" alt="enset's logo">
+            </div>
+            <form [formGroup]="signupForm" (ngSubmit)="onsignup()">
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Name <span class="text-danger ms-1">*</span></label>
+                    <input type="text" placeholder="name" class="form-control" id="exampleInputName" formControlName="fullName" name="fullName" required />
+                    <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="text-danger">
+                      <small *ngIf="fullName.errors?.['required']">Name is required</small>
+                    </div>
+                  </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address<span class="text-danger ms-1">*</span></label>
+                  <input type="email" placeholder="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email" name="email" required/>
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                    <small *ngIf="email.errors?.['required']">Email is required</small>
+                    <small *ngIf="email.errors?.['email']">Please enter a valid email</small>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password<span class="text-danger ms-1">*</span></label>
+                  <input type="password" placeholder="password" class="form-control" id="exampleInputPassword1" name="password" required formControlName="password"/>
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                    <small *ngIf="password.errors?.['required']">Password is required</small>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputconfirmPassword1" class="form-label"> Confirm Password<span class="text-danger ms-1">*</span></label>
+                  <input type="password" placeholder="confirm password" class="form-control" id="exampleInputConfirmPassword" formControlName="confirmPassword" name="confirmPassword" required/>
+                  <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="text-danger">
+                    <small *ngIf="confirmPassword.errors?.['required']">Confirm Password is required</small>                  </div>
+                </div>
+                <div *ngIf="signupForm.errors?.['passwordMismatch'] && (signupForm.touched || signupForm.dirty)" class="text-danger">
+                  <small>Passwords do not match</small>
+                </div>
+                <button type="submit" class="btn btn-info" [disabled]="signupForm.invalid" >Sign Up</button>
+              </form>
+              <div> <a routerLink="/login"> Already registered? Click to sign in !!</a></div>
+             
+        </div>
+    </div>
+</div>

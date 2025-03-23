@@ -1,0 +1,31 @@
+.input-group {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  .input-group-text {
+    background-color: #f8f9fa; 
+    min-width: 120px; 
+    text-align: center; 
+    border: 1px solid #ced4da; 
+    transition: background-color 0.3s ease, transform 0.1s ease; 
+  }
+  
+  .input-group-text:hover {
+    cursor: pointer; 
+    background-color: #e9ecef; 
+    transform: scale(1.02); 
+  }
+  
+ 
+  .form-control[readonly] {
+    background-color: #09bbf1;
+    cursor: default; 
+  }
+  
+  

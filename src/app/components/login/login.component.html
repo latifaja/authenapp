@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center">
+              <img src="logo/ensetlogo.png" alt="enset's logo">
+                
+            </div>
+            <div *ngIf="successMessage" class="alert alert-success" role="alert">
+              {{ successMessage }}
+            </div>
+      
+           
+            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+              {{ errorMessage }}
+            </div>
+            <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address<span class="text-danger ms-1">*</span></label>
+                  <input type="email" placeholder="email" class="form-control" id="exampleInputEmail1" name="email" #email="ngModel" aria-describedby="emailHelp" required [(ngModel)]="login.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                    <small *ngIf="email.errors?.['required']">Email is required</small>
+                    <small *ngIf="email.errors?.['pattern']">Please enter a valid email</small>
+                  </div>
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password<span class="text-danger ms-1">*</span></label>
+                  <input type="password" placeholder="password"  class="form-control" name="password" id="exampleInputPassword1" [(ngModel)]="login.password" required #password="ngModel">
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                    <small *ngIf="password.errors?.['required']">Password is required</small>
+                  </div>
+                </div>
+                
+                <button type="submit" class="btn btn-info" [disabled]="loginForm.invalid" >Sign In</button>
+              </form>
+              <div><a routerLink="/signup">New user?  Click to sign up !!</a></div>
+                     </div>
+       
+    </div>
+</div>
